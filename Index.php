@@ -20,19 +20,35 @@
             </div>
             <?php include 'Home/nav.php'; ?>
         </aside>
-        <main class="main-content">
-            <div class="content">
-                <?php
-                if (isset($_GET['page']) && $_GET['page'] == 'about') {
-                    include 'Biodata.php';
-                } elseif (isset($_GET['page']) && $_GET['page'] == 'portfolio') {
-                    include 'portfolio.php';
+         <main class="main-content">
+        <div class="content">
+            <?php
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+                $allowed_pages = ['about', 'portfolio', 'Built_In_Functions', 'Call_By_Reference', 'Hello_Word', 'If_Else'];
+                
+                if (in_array($page, $allowed_pages)) {
+                    if ($page == 'about') {
+                        include 'Biodata.php';
+                    } elseif ($page == 'portfolio') {
+                        include 'portfolio.php';
+                    } else {
+                        $file = 'List/' . $page . '.php';
+                        if (file_exists($file)) {
+                            include $file;
+                        } else {
+                            echo "File not found: $file";
+                        }
+                    }
                 } else {
-                    echo 'Welcome to my portfolio!';
+                    echo 'Page not found!';
                 }
-                ?>
-            </div>
-        </main>
+            } else {
+                echo 'Welcome to my portfolio!';
+            }
+            ?>
+        </div>
+    </main>
     </div>
 </body>
 </html>
