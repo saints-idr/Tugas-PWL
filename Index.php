@@ -23,9 +23,14 @@
          <main class="main-content">
         <div class="content">
             <?php
+            // Aktifkan error reporting
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+
             if (isset($_GET['page'])) {
                 $page = $_GET['page'];
-                $allowed_pages = ['about', 'portfolio', 'Built_In_Functions', 'Call_By_Reference', 'Hello_Word', 'If_Else'];
+                $allowed_pages = ['about', 'portfolio','built_in_functions', 'call_by_reference', 'call_by_value', 'do_while_loop', 'for_loop', 'foreach_loop', 'functions_parameter', 'Hello_Word', 'If_Else'];
                 
                 if (in_array($page, $allowed_pages)) {
                     if ($page == 'about') {

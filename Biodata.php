@@ -12,8 +12,7 @@
     </header>
     <div class="main-biodata">
             <div class="biodata">
-                <h2>Biodata</h2>
-                <img src="Picture/IMG_4526.jpg">
+                <h2>Informasi</h2>
                 <p><strong>Nama:</strong> Lucky Aditya Pratama</p>
                 <p><strong>Npm:</strong> 202143500565</p>
                 <p><strong>Kelas:</strong> Y6F</p>
